@@ -7,13 +7,12 @@ describe Pizza do
 
   describe '.intialize' do
     it 'records all of the toppings' do
-      toppings = [
-        Topping.new('mushrooms', vegetarian: true),
-        Topping.new('pepperoni')
-      ]
-      pizza = Pizza.new(toppings)
+      topping1 = Topping.new('mushrooms', vegetarian: true),
+      topping2 = Topping.new('pepperoni')
 
-      expect(pizza.toppings).to eq(toppings)
+      pizza = Pizza.new(topping1, topping2)
+
+      expect(pizza.toppings).to eq([topping1, topping2])
     end
 
     it 'defailts the toppings to cheese only, if the pizza has no toppings' do
